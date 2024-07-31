@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "51199525692",
+    "firebase_url": "https://parking-lot-dcdca-default-rtdb.firebaseio.com",
+    "project_id": "parking-lot-dcdca",
+    "storage_bucket": "parking-lot-dcdca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51199525692:android:b06f5e6ed1b8b01dc21439",
+        "android_client_info": {
+          "package_name": "eu.tutorials.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnyuDMPcJXMI43GQ2BRYxyYJK2WMSfNH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:51199525692:android:bf19be5474302f0ac21439",
+        "android_client_info": {
+          "package_name": "eu.tutorials.parking_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnyuDMPcJXMI43GQ2BRYxyYJK2WMSfNH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
