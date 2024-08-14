@@ -1,13 +1,14 @@
-# Smart Parking System 
 
+
+# Smart Parking System
 
 ## Overview
 
 The **Smart Parking System** is an Android application that provides real-time status updates on parking slots based on sensor data fetched from Firebase Realtime Database. The app displays whether each slot is occupied or available, using color-coded indicators (red for occupied, green for available).
 
-### 🚧 First Prototype
+### 🚧 Current Version
 
-This is the first prototype of the Smart Parking System. More features are in the pipeline and will be released in future updates, enhancing the system's functionality and user experience.
+This version of the Smart Parking System includes several key features, with more enhancements planned for future updates to further improve functionality and user experience.
 
 ## Features
 
@@ -16,6 +17,7 @@ This is the first prototype of the Smart Parking System. More features are in th
 - **Firebase Integration:** Seamless integration with Firebase Realtime Database for fetching parking slot data.
 - **Responsive Design:** Ensures that the app looks good on all screen sizes and orientations.
 - **Lightweight:** The app is optimized for performance and battery efficiency.
+- **User Authentication:** Added login page to restrict access, making the app suitable for use in private properties.
 
 ## Screenshots
 
@@ -52,17 +54,13 @@ This is the first prototype of the Smart Parking System. More features are in th
 
 ## Usage
 
-- **View Parking Status:** Open the app to see the real-time status of parking slots.
+- **Login:** Users must log in to access the app, ensuring that only authorized users can view the parking status, ideal for private properties.
+- **View Parking Status:** After logging in, users can see the real-time status of parking slots.
 - **Data Update:** The parking slot statuses update automatically based on the sensor data in the Firebase Realtime Database.
 
 ## Upcoming Features
 
-- **User Authentication:** Implement user authentication to allow users to save their parking preferences.
 - **Enhanced UI:** Improve the user interface for better usability and aesthetics.
 - **Notification System:** Send push notifications to users about slot availability.
 
-
-
-
-
-
+---
