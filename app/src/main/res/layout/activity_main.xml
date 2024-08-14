@@ -41,4 +41,14 @@
         android:text="Empty"
         android:textSize="18sp"
         android:background="@android:color/holo_green_light" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_row="0"
+        android:layout_column="1"
+        android:layout_gravity="center"
+        android:text="@string/logout" />
+
 </GridLayout>
