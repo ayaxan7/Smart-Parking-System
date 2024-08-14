@@ -21,8 +21,10 @@ This version of the Smart Parking System includes several key features, with mor
 
 ## Screenshots
 
-<img src="Slot_updates.jpg" alt="Parking Status" width="300" />
-<img src="Login.jpg" alt="Login Form" width="300" />
+<div style="display: flex; gap: 10px;">
+    <img src="Slot_updates.jpg" alt="Parking Status" width="300" />
+    <img src="Login.jpg" alt="Login Form" width="300" />
+</div>
 
 ## Tech Stack
 
