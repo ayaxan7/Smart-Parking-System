@@ -43,7 +43,7 @@ while True:
 
                 print('Data sent to Firebase')
 
-            time.sleep(1)  # Wait for a second before sending the next data point
+            time.sleep(2)  # Wait for a second before sending the next data point
     except Exception as e:
         print(f'Error: {e}')
         time.sleep(5)  # Wait for a while before trying again in case of error
