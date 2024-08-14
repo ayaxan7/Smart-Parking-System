@@ -21,20 +21,27 @@ This version of the Smart Parking System includes several key features, with mor
 
 ## Screenshots
 
-<img src="WhatsApp%20Image%202024-08-02%20at%2001.54.44_75cf8ece.jpg" alt="Parking Status" width="300" />
+<div style="display: flex; gap: 10px;">
+    <img src="Slot_updates.jpg" alt="Parking Status" width="300" />
+    <img src="Login.jpg" alt="Login Form" width="300" />
+</div>
+
 
 ## Tech Stack
 
-- **Android (Java/Kotlin):** For developing the mobile application.
+- **Android (Java):** For developing the mobile application.
 - **Firebase Realtime Database:** For storing and fetching the parking slot data.
+- **Firebase Authentication:** For storing and verifying user credentials, ensuring secure access to private parking spots.
 - **XML:** For designing the user interface.
 
+
+This version clearly outlines the role of Firebase Authentication in your project.
 ## Setup and Installation
 
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/yourusername/parking-system.git
+    git clone https://github.com/ayaxan7/parking-system.git
     cd parking-system
     ```
 
