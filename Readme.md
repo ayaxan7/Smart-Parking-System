@@ -1,6 +1,4 @@
-Here's the updated version:
 
----
 
 # Smart Parking System
 
