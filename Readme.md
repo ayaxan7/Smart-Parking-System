@@ -21,7 +21,7 @@ This version of the Smart Parking System includes several key features, with mor
 
 ## Screenshots
 
-<img src="WhatsApp%20Image%202024-08-02%20at%2001.54.44_75cf8ece.jpg" alt="Parking Status" width="300" />
+<img src="Slot_updates.jpg" alt="Parking Status" width="300" />
 
 ## Tech Stack
 
