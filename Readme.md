@@ -41,7 +41,7 @@ This version clearly outlines the role of Firebase Authentication in your projec
 1. **Clone the Repository:**
 
     ```bash
-    git clone https://github.com/yourusername/parking-system.git
+    git clone https://github.com/ayaxan7/parking-system.git
     cd parking-system
     ```
 
