@@ -26,12 +26,16 @@ This version of the Smart Parking System includes several key features, with mor
     <img src="Login.jpg" alt="Login Form" width="300" />
 </div>
 
+
 ## Tech Stack
 
 - **Android (Java):** For developing the mobile application.
 - **Firebase Realtime Database:** For storing and fetching the parking slot data.
+- **Firebase Authentication:** For storing and verifying user credentials, ensuring secure access to private parking spots.
 - **XML:** For designing the user interface.
 
+
+This version clearly outlines the role of Firebase Authentication in your project.
 ## Setup and Installation
 
 1. **Clone the Repository:**
