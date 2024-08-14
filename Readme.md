@@ -22,10 +22,11 @@ This version of the Smart Parking System includes several key features, with mor
 ## Screenshots
 
 <img src="Slot_updates.jpg" alt="Parking Status" width="300" />
+<img src="Login.jpg" alt="Login Form" width="300" />
 
 ## Tech Stack
 
-- **Android (Java/Kotlin):** For developing the mobile application.
+- **Android (Java):** For developing the mobile application.
 - **Firebase Realtime Database:** For storing and fetching the parking slot data.
 - **XML:** For designing the user interface.
 
