@@ -19,7 +19,7 @@ This is the first prototype of the Smart Parking System. More features are in th
 
 ## Screenshots
 
-![Parking Status](WhatsApp%20Image%202024-08-02%20at%2001.54.44_75cf8ece.jpg)
+<img src="WhatsApp%20Image%202024-08-02%20at%2001.54.44_75cf8ece.jpg" alt="Parking Status" width="300" />
 
 ## Tech Stack
 
