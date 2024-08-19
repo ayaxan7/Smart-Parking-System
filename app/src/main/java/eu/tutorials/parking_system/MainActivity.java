@@ -1,5 +1,7 @@
 package eu.tutorials.parking_system;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +10,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import androidx.work.PeriodicWorkRequest;
-import androidx.work.WorkManager;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,14 +19,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.concurrent.TimeUnit;
-
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FirebaseAuth.AuthStateListener {
     private TextView box1, box2, box3;
     private DatabaseReference mDatabaseSensor1, mDatabaseSensor2, mDatabaseSensor3;
     FirebaseAuth auth;
     FirebaseUser user;
     Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,25 +38,22 @@ public class MainActivity extends AppCompatActivity {
         box1 = findViewById(R.id.box1);
         box2 = findViewById(R.id.box2);
         box3 = findViewById(R.id.box3);
-        auth=FirebaseAuth.getInstance();
-        user=auth.getCurrentUser();
-        btn=findViewById(R.id.btn_logout);
-        if(user==null){
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
+        btn = findViewById(R.id.btn_logout);
+
+        if (user == null) {
             Intent intent = new Intent(MainActivity.this, Login_Page.class);
             startActivity(intent);
             finish();
-        }
-        else {
+        } else {
             fetchSensorData();
         }
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                auth.signOut();// or FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(MainActivity.this, Login_Page.class);
-                startActivity(intent);
-                finish();
-                return;
+                animateLogoutButton();
             }
         });
     }
@@ -112,8 +108,62 @@ public class MainActivity extends AppCompatActivity {
                     ContextCompat.getColor(this, android.R.color.holo_red_light) :  // Red for occupied
                     ContextCompat.getColor(this, android.R.color.holo_green_light);  // Green for unoccupied
 
+            // Animate the background color change
+            animateColorChange(boxToUpdate, color);
+
             boxToUpdate.setText(sensorValue == 0 ? "Occupied" : "Unoccupied");
-            boxToUpdate.setBackgroundColor(color);
         }
+    }
+
+    private void animateColorChange(View view, int toColor) {
+        ObjectAnimator colorAnim = ObjectAnimator.ofArgb(view, "backgroundColor", ((TextView) view).getCurrentTextColor(), toColor);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", 1f, 1.1f, 1f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(view, "scaleY", 1f, 1.1f, 1f);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(colorAnim, scaleX, scaleY);
+        animatorSet.setDuration(500);
+        animatorSet.start();
+    }
+
+    private void animateLogoutButton() {
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(btn, "scaleX", 1f, 0.9f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(btn, "scaleY", 1f, 0.9f);
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(btn, "alpha", 1f, 0f);
+
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(scaleX, scaleY, alpha);
+        animatorSet.setDuration(300);
+        animatorSet.start();
+
+        // After animation ends, navigate to login page
+        animatorSet.addListener(new android.animation.AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(android.animation.Animator animation) {
+                auth.signOut();
+                Intent intent = new Intent(MainActivity.this, Login_Page.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (auth != null) {
+            auth.removeAuthStateListener(this);
+        }
+    }
+
+    @Override
+    public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+
     }
 }

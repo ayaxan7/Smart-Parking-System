@@ -8,7 +8,7 @@
     android:padding="16dp"
     android:alignmentMode="alignMargins"
     android:layout_gravity="center"
-    android:layout_margin="10dp">
+    android:layout_margin="16dp">
 
     <TextView
         android:id="@+id/box1"
@@ -18,7 +18,10 @@
         android:gravity="center"
         android:text="Empty"
         android:textSize="18sp"
-        android:background="@android:color/holo_green_light" />
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_green_background"
+        android:elevation="4dp"
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/box2"
@@ -28,9 +31,11 @@
         android:gravity="center"
         android:text="Empty"
         android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_green_background"
+        android:elevation="4dp"
         android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@android:color/holo_green_light" />
+        android:layout_marginEnd="8dp" />
 
     <TextView
         android:id="@+id/box3"
@@ -40,7 +45,10 @@
         android:gravity="center"
         android:text="Empty"
         android:textSize="18sp"
-        android:background="@android:color/holo_green_light" />
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_green_background"
+        android:elevation="4dp"
+        android:layout_marginStart="8dp" />
 
     <Button
         android:id="@+id/btn_logout"
@@ -48,7 +56,12 @@
         android:layout_height="wrap_content"
         android:layout_row="0"
         android:layout_column="1"
-        android:layout_gravity="center"
-        android:text="@string/logout" />
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"
+        android:background="@drawable/rounded_red_background"
+        android:elevation="6dp"
+        android:layout_marginTop="16dp"
+        android:padding="12dp" />
 
 </GridLayout>
