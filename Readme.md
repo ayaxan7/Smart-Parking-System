@@ -19,13 +19,6 @@ This version of the Smart Parking System includes several key features, with mor
 - **Lightweight:** The app is optimized for performance and battery efficiency.
 - **User Authentication:** Added login page to restrict access, making the app suitable for use in private properties.
 
-## Screenshots
-
-<div style="display: flex; gap: 10px;">
-    <img src="Slot_updates.jpg" alt="Parking Status" width="300" />
-    <img src="Login.jpg" alt="Login Form" width="300" />
-</div>
-
 
 ## Tech Stack
 
